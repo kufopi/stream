@@ -59,7 +59,7 @@ mdf_others =pd.read_csv('others.csv', names= ('pple','longitude','latitude'))
 mdf = pd.read_csv('datatest.csv', names= ('pple','longitude','latitude'))
 
 #concat
-appenddf = mdf_others.append(mdf,ignore_index=True)
+appenddf = pd.concat([mdf_others,mdf],axis=0)
 st.subheader("Sample of appended People's GPS Dataframe")
 st.dataframe(appenddf.sample(20))
 st.write(f'Just to confirm the shape of dataframe is correct: {appenddf.shape}')
