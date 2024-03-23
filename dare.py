@@ -17,8 +17,8 @@ st.title('Dare Aremu Project Code')
 st.markdown('''
 This web app is bla bla bla sheep
 * **Python Libraries** : sklearn, numpy,seaborn, matplotlib, pandas, streamlit and altair
-* **Image Map Source** : [Openstreetmap](https://www.openstreetmap.org/#map=17/7.52191/4.53481)
-* ** Google Map Link** : [Google Map](https://www.google.com/maps/@7.5189827,4.527104,17z)
+* **Image Map Source** : [Openstreetmap](https://www.openstreetmap.org/#map=17/7.69244/4.42085)
+* ** Google Map Link** : [Google Map](https://www.google.com/maps/@7.69244,4.42085,17z)
 ''')
 st.header('Simulating GPS Data of the Index Person and others within AU campus')
 st.write('Using longitude: 4.42085 and latitude: 7.69244 as reference points')
