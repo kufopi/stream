@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import pydeck as pdk
 
 #use an intor image
-frontimg = Image.open('ban.jpg')
+frontimg = Image.open('ban.png')
 st.image(frontimg, use_column_width=True, caption='Google map showing part of AU campus')
 
 st.title('Dare Aremu Project Code')
