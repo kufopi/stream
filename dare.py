@@ -11,7 +11,7 @@ import pydeck as pdk
 
 #use an intor image
 frontimg = Image.open('ban.jpg')
-st.image(frontimg, use_column_width=True, caption='Google map showing part of OAU campus')
+st.image(frontimg, use_column_width=True, caption='Google map showing part of AU campus')
 
 st.title('Dare Aremu Project Code')
 st.markdown('''
@@ -20,11 +20,11 @@ This web app is bla bla bla sheep
 * **Image Map Source** : [Openstreetmap](https://www.openstreetmap.org/#map=17/7.52191/4.53481)
 * ** Google Map Link** : [Google Map](https://www.google.com/maps/@7.5189827,4.527104,17z)
 ''')
-st.header('Simulating GPS Data of the Index Person and others within OAU campus')
-st.write('Using longitude: 4.530315 and latitude: 7.517722 as reference points')
+st.header('Simulating GPS Data of the Index Person and others within AU campus')
+st.write('Using longitude: 4.42085 and latitude: 7.69244 as reference points')
 
-long = 4.530315
-lat = 7.517722
+long = 4.42085
+lat = 7.69244
 fname= 'datatest.csv'
 students =['Bose','Henry','Callistus','Yahaya','Dokubo']
 filename='others.csv'
