@@ -84,7 +84,6 @@ def generate_random(long,lat,num_rows,filna):
     with open(filna, 'w') as file:
         for _ in range(num_rows):
             #uniqueid = '%012x' % random.randrange(16**12) # 12 char random string
-             
             uniqueid = 'POI'
             rand_lat = random.random()/100
             rand_long = random.random()/100
