@@ -78,6 +78,9 @@ remanat_df = student_pop_df[student_pop_df['Identifier']!=chosen]
 st.write(f'Let us assumne the student with identifier {chosen} = {get_student_name(chosen,student_pop_df)} is our person of interest POI whose body temp exceeds normal ')
 st.write(f'Remanant population database excluding {chosen}- {get_student_name(chosen,student_pop_df)}')
 st.dataframe(remanat_df)
+black_sheep =get_student_name(chosen,student_pop_df)
+left_over = version2.remove(black_sheep)
+st.write(f'The left over students: {left_over}')
 
 def generate_random(long,lat,num_rows,filna):
     with open(filna, 'w') as file:
@@ -91,7 +94,7 @@ def generate_random(long,lat,num_rows,filna):
 
 def generate_others_coord(long, lat, num_rows, filename):
     with open(filename, 'w') as file:
-        for stdt in version2.remove(get_student_name(chosen,student_pop_df)):
+        for stdt in left_over:
             for _ in range(num_rows):
                 uniqueid = stdt
                 rand_lat = random.random() / 100
