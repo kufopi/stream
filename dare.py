@@ -172,7 +172,7 @@ def dist_converter(dist):
 st.subheader(f"Filtering out people who may have had contact with the index case based on distance (ie distance < {dist}ft)")
 
 filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dist)]
-persons_df = filter_df.rename(columns={'pple':'Potential Contact Person'})
+persons_df = filter_df.rename(columns={'pple':'Potential Secondary Contact '})
 
 st.dataframe(persons_df)
 
