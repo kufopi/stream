@@ -144,6 +144,7 @@ st.markdown('''
 * Next create a pairwise matrix involving both dataframes
 * Multiply by 6371 to covert to kilometers to get the distance between each individual using
 [Haversine Formula](https://en.wikipedia.org/wiki/Haversine_formula#:~:text=The%20haversine%20formula%20determines%20the,given%20their%20longitudes%20and%20latitudes.&text=These%20names%20follow%20from%20the,sin2(%CE%B82).)
+[Sklearn.neighbors.DistanceMetric](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.haversine_distances.html)
 
 ''')
 
