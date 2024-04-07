@@ -65,7 +65,7 @@ This web app is bla bla bla sheep
 * ** Google Map Link** : [Google Map](https://www.google.com/maps/@7.69244,4.42085,17z)
 ''')
 st.header('Simulating GPS Data of the Index Person and others within AU campus')
-st.write('Using longitude: 4.42085 and latitude: 7.69244 as reference points')
+st.markdown(''' * Using longitude: 4.42085 and latitude: 7.69244 as reference points as our [geo-fence](https://en.wikipedia.org/wiki/Geo-fence#:~:text=A%20geofence%20is%20a%20virtual,school%20zones%20or%20neighborhood%20boundaries) ''')
 
 long = 4.42085
 lat = 7.69244
