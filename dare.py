@@ -141,10 +141,10 @@ st.write('Sample of New Dataframe for df')
 st.dataframe(df.sample(5))
 
 st.markdown('''
-* Next create a pairwise matrix involving both dataframes
+* Next create a pairwise matrix involving both dataframes using sklearn libraries
 * Multiply by 6371 to covert to kilometers to get the distance between each individual using
 [Haversine Formula](https://en.wikipedia.org/wiki/Haversine_formula#:~:text=The%20haversine%20formula%20determines%20the,given%20their%20longitudes%20and%20latitudes.&text=These%20names%20follow%20from%20the,sin2(%CE%B82).)
-[Sklearn.neighbors.DistanceMetric](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.haversine_distances.html)
+* [Sklearn.neighbors.DistanceMetric](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.haversine_distances.html)
 
 ''')
 
@@ -165,7 +165,7 @@ st.subheader('Sample of the manipulated Data')
 st.dataframe(df_dist_km_long.sample(5))
 
 # Filtering out people of interest based on distance
-dist = st.sidebar.slider('Filter contacts based on distance (feet)', min_value=1, max_value=10)
+dist = st.sidebar.slider('Filter contacts based on distance (feet)', min_value=2, max_value=10)
 def dist_converter(dist):
     km = float(dist)*0.000305
     return km
