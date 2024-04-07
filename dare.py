@@ -8,6 +8,39 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pydeck as pdk
+import random
+import string
+
+
+# Function to generate a random alphanumeric identifier
+def generate_identifier(length):
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+# Sample student names
+student_names = [
+    'Emma', 'Noah', 'Olivia', 'Olufemi', 'Idriss', 'William', 'Sophia', 'Yusuf',
+    'Isabella', 'Bako', 'Amaka', 'Bayowa', 'Amara', 'Emeka', 'Kafayat',
+    'Tijani', 'Aliu', 'Gbolahan', 'Chinasa', 'Hauwa'
+]
+
+departments = [
+    'Computer Science', 'Mechanical Engineering', 'Physics', 'Chemistry',
+    'Biology', 'Mathematics', 'History', 'English', 'Nursing', 'Economics'
+]
+
+# Generate the DataFrame
+student_pop_df = pd.DataFrame({
+    'Student Name': student_names,
+    'Identifier': [generate_identifier(7) for _ in range(20)],
+    'Department': [random.choice(departments) for _ in range(20)],
+    'Phone Number': [generate_phone_number() for _ in range(20)]
+})
+
+#print(student_pop_df)
+
+st.write('Simulated student population database')
+st.dataframe(student_pop_df)
+
 
 #use an intor image
 frontimg = Image.open('ban.png')
