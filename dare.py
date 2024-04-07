@@ -64,7 +64,11 @@ lat = 7.69244
 fname= 'datatest.csv'
 students =['Bose','Henry','Callistus','Yahaya','Dokubo']
 filename='others.csv'
-st.write('Remanant population database')
+chosen = random.choice(student_pop_df['Identifier'].tolist())
+version2 = student_names.copy()
+remanat_df = student_pop_df[student_pop_df['Identifier']!=chosen]
+st.write(f'Remanant population database excluding {chosen}')
+st.dataframe(remanat_df)
 
 def generate_random(long,lat,num_rows,filna):
     with open(filna, 'w') as file:
