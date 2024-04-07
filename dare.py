@@ -77,7 +77,7 @@ chosen = random.choice(student_pop_df['Identifier'].tolist())
 version2 = student_names.copy()
 remanat_df = student_pop_df[student_pop_df['Identifier']!=chosen
 
-st.write('Remanant population database')
+#st.write('Remanant population database')
 st.dataframe(remanat_df)
 
 def generate_random(long,lat,num_rows,filna):
