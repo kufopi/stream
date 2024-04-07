@@ -17,7 +17,7 @@ def generate_identifier(length):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
 def generate_phone_number():
-    return f"+234-{random.randint(700, 999)}-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
+    return f"+234-{random.randint(800, 999)}-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
 
 # Sample student names
 student_names = [
