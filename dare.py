@@ -80,7 +80,7 @@ st.write(f'Remanant population database excluding {chosen}- {get_student_name(ch
 st.dataframe(remanat_df)
 black_sheep =get_student_name(chosen,student_pop_df)
 left_over = version2.remove(black_sheep)
-st.write(f'The left over students: {left_over}')
+st.write(f'The left over students: {version2}')
 
 def generate_random(long,lat,num_rows,filna):
     with open(filna, 'w') as file:
