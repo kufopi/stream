@@ -75,6 +75,7 @@ filename='others.csv'
 chosen = random.choice(student_pop_df['Identifier'].tolist())
 version2 = student_names.copy()
 remanat_df = student_pop_df[student_pop_df['Identifier']!=chosen]
+st.write(f'Let us assumne the student with identifier {chosen} = {get_student_name(chosen,student_pop_df)} is our person of interest POI whose body temp exceeds normal ')
 st.write(f'Remanant population database excluding {chosen}- {get_student_name(chosen,student_pop_df)}')
 st.dataframe(remanat_df)
 
@@ -90,7 +91,7 @@ def generate_random(long,lat,num_rows,filna):
 
 def generate_others_coord(long, lat, num_rows, filename):
     with open(filename, 'w') as file:
-        for stdt in students:
+        for stdt in version2.remove(get_student_name(chosen,student_pop_df)):
             for _ in range(num_rows):
                 uniqueid = stdt
                 rand_lat = random.random() / 100
