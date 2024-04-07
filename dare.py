@@ -12,15 +12,6 @@ import random
 import string
 
 
-# Function to get student name from identifier
-def get_student_name(identifier, dataframe):
-    student_row = dataframe[dataframe['Identifier'] == identifier]
-    if not student_row.empty:
-        return student_row['Student Name'].values[0]
-    else:
-        return "Identifier not found."
-
-
 # Function to generate a random alphanumeric identifier
 def generate_identifier(length):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
@@ -73,12 +64,6 @@ lat = 7.69244
 fname= 'datatest.csv'
 students =['Bose','Henry','Callistus','Yahaya','Dokubo']
 filename='others.csv'
-chosen = random.choice(student_pop_df['Identifier'].tolist())
-version2 = student_names.copy()
-remanat_df = student_pop_df[student_pop_df['Identifier']!=chosen
-
-#st.write('Remanant population database')
-#st.dataframe(remanat_df)
 
 def generate_random(long,lat,num_rows,filna):
     with open(filna, 'w') as file:
@@ -245,4 +230,3 @@ st.pydeck_chart(pdk.Deck(
 }
     },
 ))
-
