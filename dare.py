@@ -25,11 +25,12 @@ departments = [
 
 # Function to get student name from identifier
 def get_student_name(identifier, dataframe):
-student_row = dataframe[dataframe['Identifier'] == identifier]
-if not student_row.empty:
-    return student_row['Student Name'].values[0]
-else:
-    return "Identifier not found."
+        student_row = dataframe[dataframe['Identifier'] == identifier]
+        if not student_row.empty:
+            return student_row['Student Name'].values[0]
+        else:
+            return "Identifier not found."
+                
 
 if os.path.exists('students.csv'):
     student_pop_df = pd.read_csv('students.csv')
