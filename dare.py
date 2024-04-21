@@ -71,7 +71,7 @@ frontimg = Image.open('ban.png')
 st.image(frontimg, use_column_width=True, caption='Google map showing part of AU campus')
 
 st.title('Development of a Secure Contact Tracing Model for Controlling the Spread of Infectious Diseases')
-st.subheader('By :green[Oluwadamilare A. Aremu] - _AUPG/22/0062_')
+st.subheader('By Oluwadamilare A. Aremu - _AUPG/22/0062_')
 st.markdown('''
 This web app is bla bla bla sheep
 * **Python Libraries** : [Sklearn](https://scikit-learn.org/), [Numpy](https://numpy.org/), [Seaborn](https://seaborn.pydata.org/), [matplotlib](https://matplotlib.org/), [Pandas](https://pandas.pydata.org/), [Streamlit](https://streamlit.io/) and altair
