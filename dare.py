@@ -70,14 +70,15 @@ student_pop_df = pd.read_csv('students.csv')
 frontimg = Image.open('ban.png')
 st.image(frontimg, use_column_width=True, caption='Google map showing part of AU campus')
 
-st.title('Dare Aremu Project Code')
+st.title('Development of a Secure Contact Tracing Model for Controlling the Spread of Infectious Diseases')
+st.subheader('By :green[Oluwadamilare A. Aremu] - _AUPG/22/0062_',divider='rainbow')
 st.markdown('''
 This web app is bla bla bla sheep
 * **Python Libraries** : [Sklearn](https://scikit-learn.org/), [Numpy](https://numpy.org/), [Seaborn](https://seaborn.pydata.org/), [matplotlib](https://matplotlib.org/), [Pandas](https://pandas.pydata.org/), [Streamlit](https://streamlit.io/) and altair
 * **Image Map Source** : [Openstreetmap](https://www.openstreetmap.org/#map=17/7.69244/4.42085)
 * ** Google Map Link** : [Google Map](https://www.google.com/maps/@7.69244,4.42085,17z)
 ''')
-st.header('Simulating GPS Data of the Index Person and others within AU campus')
+st.header('Simulating Decrypted GPS Data of the Index Person and others within AU campus using [CryptPandas](https://pypi.org/project/CryptPandas/)')
 st.markdown(''' * Using longitude: 4.42085 and latitude: 7.69244 as reference points as our [geo-fence](https://en.wikipedia.org/wiki/Geo-fence#:~:text=A%20geofence%20is%20a%20virtual,school%20zones%20or%20neighborhood%20boundaries) ''')
 
 
