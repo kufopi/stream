@@ -10,43 +10,56 @@ import matplotlib.pyplot as plt
 import pydeck as pdk
 import random
 import string
+import os.path
 
-
-# Function to get student name from identifier
-def get_student_name(identifier, dataframe):
-    student_row = dataframe[dataframe['Identifier'] == identifier]
-    if not student_row.empty:
-        return student_row['Student Name'].values[0]
-    else:
-        return "Identifier not found."
-
-# Function to generate a random alphanumeric identifier
-def generate_identifier(length):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
-
-def generate_phone_number():
-    return f"+234-{random.randint(800, 999)}-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
-
-# Sample student names
 student_names = [
-    'Emma', 'Noah', 'Olivia', 'Olufemi', 'Idriss', 'William', 'Sophia', 'Yusuf',
-    'Isabella', 'Bako', 'Amaka', 'Bayowa', 'Amara', 'Emeka', 'Kafayat',
-    'Tijani', 'Aliu', 'Gbolahan', 'Chinasa', 'Hauwa'
-]
-
+        'Emma', 'Noah', 'Olivia', 'Olufemi', 'Idriss', 'William', 'Sophia', 'Yusuf',
+        'Isabella', 'Bako', 'Amaka', 'Bayowa', 'Amara', 'Emeka', 'Kafayat',
+        'Tijani', 'Aliu', 'Gbolahan', 'Chinasa', 'Hauwa'
+    ]
+    
 departments = [
-    'Computer Science', 'Mechanical Engineering', 'Physics', 'Chemistry',
-    'Biology', 'Mathematics', 'History', 'English', 'Nursing', 'Economics'
-]
+        'Computer Science', 'Mechanical Engineering', 'Physics', 'Chemistry',
+        'Biology', 'Mathematics', 'History', 'English', 'Nursing', 'Economics'
+    ]
 
-# Generate the DataFrame
-student_pop_df = pd.DataFrame({
-    'Student Name': student_names,
-    'Identifier': [generate_identifier(7) for _ in range(20)],
-    'Department': [random.choice(departments) for _ in range(20)],
-    'Phone Number': [generate_phone_number() for _ in range(20)]
-})
 
+
+if os.path.exists('students.csv'):
+    student_pop_df = pd.read_csv('students.csv')
+else:
+    
+    # Function to get student name from identifier
+    def get_student_name(identifier, dataframe):
+        student_row = dataframe[dataframe['Identifier'] == identifier]
+        if not student_row.empty:
+            return student_row['Student Name'].values[0]
+        else:
+            return "Identifier not found."
+    
+    # Function to generate a random alphanumeric identifier
+    def generate_identifier(length):
+        return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+    
+    def generate_phone_number():
+        return f"+234-{random.randint(800, 999)}-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
+    
+    # Sample student names
+   
+    
+    # Generate the DataFrame
+    student_pop = pd.DataFrame({
+        'Student Name': student_names,
+        'Identifier': [generate_identifier(7) for _ in range(20)],
+        'Department': [random.choice(departments) for _ in range(20)],
+        'Phone Number': [generate_phone_number() for _ in range(20)]
+    })
+    student_pop.to_csv('students.csv', index=False)
+    
+    
+
+
+student_pop_df = pd.read_csv('students.csv')
 #print(student_pop_df)
 
 st.write('Simulated student population database')
@@ -172,7 +185,7 @@ def dist_converter(dist):
 st.subheader(f"Filtering out people who may have had contact with the index case based on distance (ie distance < {dist}ft)")
 
 filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dist)]
-persons_df = filter_df.rename(columns={'pple':'Potential Secondary Contact '})
+persons_df = filter_df.rename(columns={'pple':'Potential Contact Person'})
 
 st.dataframe(persons_df)
 
