@@ -121,7 +121,7 @@ def generate_others_coord(long, lat, num_rows, filename):
 
 
 st.sidebar.header('Controls')
-nrows = st.sidebar.slider('Number of rows',min_value=100, max_value=500)
+nrows = st.sidebar.slider('Number of rows',min_value=150, max_value=500)
 # Generate the  gps points
 generate_random( long,lat,nrows,fname)
 generate_others_coord(long,lat,nrows,filename)
