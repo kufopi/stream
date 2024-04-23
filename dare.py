@@ -183,7 +183,7 @@ st.subheader('Sample of the manipulated Data')
 st.dataframe(df_dist_km_long.sample(5))
 
 # Filtering out people of interest based on distance
-dist = st.sidebar.slider('Filter contacts based on distance (feet)', min_value=2, max_value=10)
+dist = st.sidebar.slider('Filter contacts based on distance (feet)', min_value=3, max_value=10)
 def dist_converter(dist):
     km = float(dist)*0.000305
     return km
