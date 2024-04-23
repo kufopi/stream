@@ -93,8 +93,8 @@ filename='others.csv'
 chosen = random.choice(student_pop_df['Identifier'].tolist())
 version2 = student_names.copy()
 remanat_df = student_pop_df[student_pop_df['Identifier']!=chosen]
-st.write(f'Let us assumne the student with identifier {chosen} = {get_student_name(chosen,student_pop_df)} is our person of interest POI whose body temp exceeds normal ')
-st.write(f'Remanant population database excluding {chosen}- {get_student_name(chosen,student_pop_df)}')
+st.write(f'Let us assume the student with identifier {chosen} = {get_student_name(chosen,student_pop_df)} is our person of interest POI whose body temperature exceeds normal ')
+st.write(f'Remnant population database excluding {chosen}- {get_student_name(chosen,student_pop_df)}')
 st.dataframe(remanat_df)
 black_sheep =get_student_name(chosen,student_pop_df)
 version2.remove(black_sheep)
@@ -131,32 +131,32 @@ mdf = pd.read_csv('datatest.csv', names= ('pple','longitude','latitude'))
 
 #concat
 appenddf = pd.concat([mdf_others,mdf],axis=0)
-st.subheader("Sample of appended People's GPS Dataframe")
+st.subheader("A Sample of all Student's GPS Dataframe")
 st.dataframe(appenddf.sample(20))
 st.write(f'Just to confirm the shape of dataframe is correct: {appenddf.shape}')
 
 #read & display the data
 df_others =pd.read_csv('others.csv', names= ('pple','longitude','latitude'))
-st.subheader("Sample of People's GPS Dataframe")
-st.dataframe(df_others.sample(9))
-st.write(f'Just to confirm the shape of dataframe is correct: {df_others.shape}')
+st.subheader("A Sample of other students GPS coordinates Dataframe except that of the POI")
+st.dataframe(df_others.sample(10))
+#st.write(f'Just to confirm the shape of dataframe is correct: {df_others.shape}')
 
-st.subheader("Sample of Index Person's Dataframe")
+st.subheader("A Sample of POI's GPS Coordinates Dataframe")
 df = pd.read_csv('datatest.csv', names= ('uniqueid','longitude','latitude'))
-st.dataframe(df.sample(5))
-st.write(f'Just to confirm the shape of dataframe is correct: {df.shape}')
+st.dataframe(df.sample(10))
+#st.write(f'Just to confirm the shape of dataframe is correct: {df.shape}')
 
 st.header('Data Manipulation')
-st.markdown('Additon of columns of longitude and latitude in **radians** using np.radians')
+st.markdown('Addition of columns of longitude and latitude in **radians** using np.radians')
 
 df[['long_radians', 'lat_radians']] = (np.radians(df.loc[:,['longitude','latitude']]))
 df_others[['long_radians', 'lat_radians']] = (np.radians(df_others.loc[:,['longitude','latitude']]))
 
-st.write('Sample of New Dataframe for df_others')
-st.dataframe(df_others.sample(5))
+st.write('A Sample of New Dataframe for the Students')
+st.dataframe(df_others.sample(10))
 
-st.write('Sample of New Dataframe for df')
-st.dataframe(df.sample(5))
+st.write('A Sample of New Dataframe for the POI')
+st.dataframe(df.sample(10))
 
 st.markdown('''
 * Next create a pairwise matrix involving both dataframes using sklearn libraries
@@ -194,7 +194,7 @@ persons_df = filter_df.rename(columns={'pple':'Potential Contact Person'})
 
 st.dataframe(persons_df)
 
-st.header('Data Visualization')
+st.header('Data Visualization using Pydeck Library')
 
 Bbox= ((df.longitude.max(), df.latitude.max()),
        (df.longitude.min(), df.latitude.min()))
@@ -204,7 +204,9 @@ Obtain the boundaries of the dataframe:
 Bbox= ((df.longitude.max(), df.latitude.max()),
  (df.longitude.min(), df.latitude.min()))
 ```
-Plotting the GPS coordinates of the Index person (green dots) and other individuals on campus (red dots)
+""")
+st.markdown(f"""
+Plotting the GPS coordinates of the Index person -_{get_student_name(chosen,student_pop_df)}_ (green dots) and other individuals on campus (red dots)
 """)
 
 # Mapping the movements
