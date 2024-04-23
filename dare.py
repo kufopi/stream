@@ -207,6 +207,7 @@ Bbox= ((df.longitude.max(), df.latitude.max()),
 """)
 st.markdown(f"""
 Plotting the GPS coordinates of the Index person -_{get_student_name(chosen,student_pop_df)}_ (green dots) and other individuals on campus (red dots)
+[zoom in]
 """)
 
 # Mapping the movements
