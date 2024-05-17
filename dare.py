@@ -73,7 +73,7 @@ def program_run():
         with open(filna, 'w') as file:
             for _ in range(num_rows):
                 #uniqueid = '%012x' % random.randrange(16**12) # 12 char random string
-                uniqueid = 'POI'
+                uniqueid = get_student_name(chosen,data) #'POI'
                 rand_lat = random.random()/100
                 rand_long = random.random()/100
                 file.write(f"{uniqueid.lower()},{long+rand_long:.6f},{lat+rand_lat:.6f}\n")
@@ -81,7 +81,7 @@ def program_run():
 
     def generate_others_coord(long, lat, num_rows, filename):
         with open(filename, 'w') as file:
-            for stdt in version2:
+            for stdt in remanat_df['Student_name'].tolist():
                 for _ in range(num_rows):
                     uniqueid = stdt
                     rand_lat = random.random() / 100
@@ -112,7 +112,7 @@ def program_run():
     st.dataframe(df_others.sample(10))
     #st.write(f'Just to confirm the shape of dataframe is correct: {df_others.shape}')
 
-    st.subheader(f"2.2 A Sample of {get_student_name(chosen,data)} GPS Coordinates Dataframe")
+    st.subheader(f"2.2 A Sample of {get_student_name(chosen,data)}'s GPS Coordinates Dataframe")
     df = pd.read_csv('datatest.csv', names= ('uniqueid','longitude','latitude'))
     st.dataframe(df.sample(10))
 
