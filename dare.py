@@ -9,7 +9,7 @@ from streamlit_gsheets import GSheetsConnection
 from sklearn.metrics.pairwise import haversine_distances
 
 st.image('ban.png')
-url= "https://docs.google.com/spreadsheets/d/1mb9I08vi4TBu4dtgaV3JMUh2m0BvtfdCaLEL3CSqExA/edit?usp=sharing"
+url=  "https://docs.google.com/spreadsheets/d/1mb9I08vi4TBu4dtgaV3JMUh2m0BvtfdCaLEL3CSqExA/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Function to get student name from identifier
