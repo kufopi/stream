@@ -29,7 +29,7 @@ st.title(' A Secure Contact Tracing Model for Controlling the Spread of Infectio
 st.subheader('By Oluwadamilare A. Aremu - _AUPG/22/0062_')
 st.markdown('''
 
-* **Python Libraries** : [Sklearn](https://scikit-learn.org/), [Numpy](https://numpy.org/), [Seaborn](https://seaborn.pydata.org/), [matplotlib](https://matplotlib.org/), [Pandas](https://pandas.pydata.org/), [Streamlit](https://streamlit.io/) and altair
+* **Python Libraries** : [Sklearn](https://scikit-learn.org/), [Numpy](https://numpy.org/), [Seaborn](https://seaborn.pydata.org/), [matplotlib](https://matplotlib.org/), [Pandas](https://pandas.pydata.org/), [Streamlit](https://streamlit.io/) and [Cryptpandas](https://medium.com/@lucamingarelli/encrypted-pandas-dataframes-for-secure-storage-and-sharing-in-python-a714f441d7fa)
 * **Image Map Source** : [Openstreetmap](https://www.openstreetmap.org/#map=17/7.69244/4.42085)
 * ** Google Map Link** : [Google Map](https://www.google.com/maps/@7.69244,4.42085,17z)
 ''')
