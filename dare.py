@@ -209,7 +209,7 @@ def program_run():
 
     filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dista)]
     persons_df = filter_df.rename(columns={'pple':'Student_name'})  
-    merged_df =  persons_df.merge(data,on='Student_name',how='inner')
+    merged_df =  persons_df.merge(data,on='Student_name',how='outer')
     st.dataframe(persons_df)
     st.dataframe(merged_df)
     common_columns = [col for col in data.columns if col in persons_df.columns]    
