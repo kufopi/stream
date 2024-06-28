@@ -50,8 +50,10 @@ filename='others.csv'
 
 
 st.sidebar.header('Controls')
-affected = st.sidebar.selectbox("Select an individual with with Temp above 37° celcius",
+affected = st.sidebar.selectbox("Select an individual",
                      data['Matric'])
+pix = data.loc[data['Matric']==affected,'Picture'].iloc[0]
+st.sidebar.header(f'Image: {pix}')
 nrows = st.sidebar.slider('Number of rows',min_value=150, max_value=500)
 dista = st.sidebar.slider('Filter contacts based on distance (feet)', min_value=3, max_value=10)
 
@@ -60,8 +62,8 @@ chosen = affected #random.choice(data['Matric'].tolist())
 version2 = data['Student_name'].tolist()
 remanat_df = data[data['Matric']!=chosen]
 
-pix = data.loc[data['Matric']==affected,'Picture'].iloc[0]
-st.write(pix)
+
+
 def program_run():
 
 
