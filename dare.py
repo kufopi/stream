@@ -212,9 +212,9 @@ def program_run():
     ppdf = persons_df.copy()
     ppdf.reset_index(drop=True, inplace=True)    
 
-    merged_df =  ppdf.merge(data,on='Student_name',how='inner')
+    merged_df =  ppdf.merge(remanat_df,on='Student_name',how='inner')
     st.dataframe(persons_df)
-    st.dataframe(ppdf)
+    st.dataframe(merged_df)
     common_columns = [col for col in data.columns if col in persons_df.columns]    
     st.write(common_columns)    
         
