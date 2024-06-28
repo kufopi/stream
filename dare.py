@@ -219,9 +219,9 @@ def program_run():
 
     
     st.dataframe(ppdf)
-    st.write(type(persons_df))
+    print(type(persons_df))
     common_columns = [col for col in data.columns if col in persons_df.columns]    
-    st.write(id_map)    
+    st.write(persons_df)    
         
 
     st.subheader('4. Data Visualization using Pydeck Library')
