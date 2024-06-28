@@ -208,9 +208,11 @@ def program_run():
     """)
 
     filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dista)]
-    persons_df = filter_df.rename(columns={'pple':'Potential Contact Person'})
-
+    persons_df = filter_df.rename(columns={'pple':'Student_name'})  
+    merged_df =  pd.merge(persons_df,data,on='Student_name',how='inner')
     st.dataframe(persons_df)
+    st.dataframe(merged_df)    
+        
 
     st.subheader('4. Data Visualization using Pydeck Library')
 
