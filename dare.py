@@ -210,10 +210,12 @@ def program_run():
     filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dista)]
     persons_df = filter_df.rename(columns={'pple':'Student_name'})
     ppdf = persons_df.copy()
-    ppdf.reset_index(drop=True, inplace=True)    
+    ppdf.reset_index(drop=True, inplace=True)
+    common_column ='Student_name'
+    merged_df = ppdf.loc[ppdf[common_column].isin(data[common_column])]    
 
-    merged_df =  ppdf.merge(remanat_df,on='Student_name',how='inner')
-    st.dataframe(persons_df)
+    
+    st.dataframe(ppdf)
     st.dataframe(merged_df)
     common_columns = [col for col in data.columns if col in persons_df.columns]    
     st.write(common_columns)    
