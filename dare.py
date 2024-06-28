@@ -214,7 +214,7 @@ def program_run():
     common_column ='Student_name'
     merged_df = data.loc[data[common_column].isin(ppdf[common_column])] 
     id_map = dict(zip(data['Student_name'], data['Picture']))
-    persons_df['Pix'] = persons_df['Student_name'].map(id_map)    
+    persons_df['Pix'] = persons_df['Student_name'].title().map(id_map)    
     
 
     
