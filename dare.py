@@ -60,6 +60,8 @@ chosen = affected #random.choice(data['Matric'].tolist())
 version2 = data['Student_name'].tolist()
 remanat_df = data[data['Matric']!=chosen]
 
+pix = data.loc[data['Matric']==affected,'Picture'].iloc[0]
+st.write(pix)
 def program_run():
 
 
