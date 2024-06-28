@@ -214,12 +214,12 @@ def program_run():
     common_column ='Student_name'
     merged_df = data.loc[data[common_column].isin(ppdf[common_column])] 
     id_map = dict(zip(data['Student_name'], data['Picture']))
-    persons_df['Pix'] = persons_df['Student_name'].map(id_map)    
+    persons_df['Pix'] = 1 #persons_df['Student_name'].map(id_map)    
     
 
     
     st.dataframe(ppdf)
-    st.dataframe(persons_df)
+    st.dataframe(type(persons_df))
     common_columns = [col for col in data.columns if col in persons_df.columns]    
     st.write(id_map)    
         
