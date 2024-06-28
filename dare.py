@@ -219,7 +219,7 @@ def program_run():
 
     
     st.dataframe(ppdf)
-    st.dataframe(type(persons_df))
+    st.write(type(persons_df))
     common_columns = [col for col in data.columns if col in persons_df.columns]    
     st.write(id_map)    
         
