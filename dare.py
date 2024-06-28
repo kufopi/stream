@@ -211,7 +211,9 @@ def program_run():
     persons_df = filter_df.rename(columns={'pple':'Student_name'})  
     merged_df =  persons_df.merge(data,on='Student_name',how='inner')
     st.dataframe(persons_df)
-    st.dataframe(merged_df)    
+    st.dataframe(merged_df)
+    common_columns = [col for col in data.columns if col in persons_df.columns]    
+    st.write(common_columns)    
         
 
     st.subheader('4. Data Visualization using Pydeck Library')
