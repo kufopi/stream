@@ -212,7 +212,7 @@ def program_run():
     ppdf = persons_df.copy()
     ppdf.reset_index(drop=True, inplace=True)
     common_column ='Student_name'
-    merged_df = ppdf.loc[ppdf[common_column].isin(data[common_column])]    
+    merged_df = data.loc[data[common_column].isin(ppdf[common_column])]    
 
     
     st.dataframe(ppdf)
