@@ -211,14 +211,14 @@ def program_run():
     persons_df = filter_df.rename(columns={'pple':'Student_name'})
     ppdf = persons_df.copy()
     ppdf.reset_index(drop=True, inplace=True)
-    common_column ='Student_name'
-    merged_df = data.loc[data[common_column].isin(ppdf[common_column])] 
+    ppdf['Student_name'] =ppdf['Student_name'].apply(str.title)
+    merged_df = ppdf.merge(data,on='Student_name',how='inner')
     id_map = dict(zip(data['Student_name'], data['Picture']))
     persons_df['Pix'] = persons_df['Student_name'].apply(str.title).map(id_map)    
     
 
     
-    st.dataframe(ppdf)
+    st.dataframe(merged_df)
     # print(type(persons_df))
       
     st.write(persons_df)   
