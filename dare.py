@@ -68,7 +68,7 @@ def program_run():
 
 
 
-    st.success(f'The chosen student with Matric {chosen} = {get_student_name(chosen,data)} is our person of interest POI whose body temperature exceeds normal ')
+    st.success(f'The chosen student with Matric {chosen} = {get_student_name(chosen,data)} is a person of interest (PoI) based on the Positive result of the RTI test conducted ')
     st.info(f'1.2 Remnant population database excluding {chosen}- {get_student_name(chosen,data)}',icon="🚨")
     st.dataframe(remanat_df)
 
