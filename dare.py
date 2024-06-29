@@ -205,23 +205,26 @@ def program_run():
         
         filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dist)]
         persons_df = filter_df.rename(columns={'pple':'Potential Contact Person'})
+        ppdf = persons_df.copy()
+        ppdf.reset_index(drop=True, inplace=True)
+        ppdf['Student_name'] =ppdf['Student_name'].apply(str.title)
+        merged_df = ppdf.merge(data,on='Student_name',how='inner')
     """)
 
     filter_df = df_dist_km_long.loc[df_dist_km_long['Kilometres'] < dist_converter(dista)]
+    poi_df = filter_df.rename(columns={'pple':'Potential Contact Person'})    
     persons_df = filter_df.rename(columns={'pple':'Student_name'})
     ppdf = persons_df.copy()
     ppdf.reset_index(drop=True, inplace=True)
     ppdf['Student_name'] =ppdf['Student_name'].apply(str.title)
     merged_df = ppdf.merge(data,on='Student_name',how='inner')
-    id_map = dict(zip(data['Student_name'], data['Picture']))
-    persons_df['Pix'] = persons_df['Student_name'].apply(str.title).map(id_map)    
-    
+    # id_map = dict(zip(data['Student_name'], data['Picture']))
+    # persons_df['Pix'] = persons_df['Student_name'].apply(str.title).map(id_map)    
+    st.dataframe(poi_df)
 
-    
+    st.write('Cross evaluating the Potential Contact Person against the Student Database')
     st.dataframe(merged_df)
-    # print(type(persons_df))
-      
-    st.write(persons_df)   
+    # print(type(persons_df))   
         
 
     st.subheader('4. Data Visualization using Pydeck Library')
