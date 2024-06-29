@@ -68,7 +68,7 @@ def program_run():
 
 
 
-    st.success(f'The chosen student with Matric {chosen} = {get_student_name(chosen,data)} is a person of interest (PoI) based on the Positive result of the RTI test conducted ')
+    st.success(f'The chosen student with Matric {chosen} = {get_student_name(chosen,data)} is a person of interest (PoI) based on the Positive result of the RTI test conducted ',icon="🚨")
     st.info(f'1.2 Remnant population database excluding {chosen}- {get_student_name(chosen,data)}',icon="🚨")
     st.dataframe(remanat_df)
 
@@ -222,7 +222,7 @@ def program_run():
     # persons_df['Pix'] = persons_df['Student_name'].apply(str.title).map(id_map)    
     st.dataframe(poi_df)
 
-    st.write('Cross evaluating the Potential Contact Person against the Student Database')
+    st.success('Cross evaluating the Potential Contact Person against the Student Database',icon="🚨")
     st.dataframe(merged_df)
     # print(type(persons_df))   
         
