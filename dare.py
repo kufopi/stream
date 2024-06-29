@@ -25,7 +25,7 @@ def get_student_name(identifier, dataframe):
 # data.to_csv('students.csv', index=False)
 # data = pd.read_csv('students.csv')
 
-st.title(' A Secure Contact Tracing Model for Controlling the Spread of Infectious Diseases')
+st.title(' A Secure Contact Tracing Model for the Spread of Respiratory Tract Infectious Diseases')
 st.subheader('By Oluwadamilare A. Aremu - _AUPG/22/0062_')
 st.markdown('''
 
