@@ -115,9 +115,9 @@ def program_run():
     mdf = crp.read_encrypted(path='mdf.crypt',password = 'mypassword123',salt = my_salt)
 
     st.subheader('1.2.1: Decrypting Data using CryptPanda with a Salt value as an additonal layer of Security' )
-    # with open('mdf_other.crypt', 'r') as file:
-    #     content = file.read()
-    #     st.write(content)
+    # 
+    for line in 'mdf_other.crypt':
+        st.write(line)
 
     st.code('''
             mdf_others = crp.read_encrypted(path='mdf_other.crypt',password = 'mypassword123',salt = my_salt)
