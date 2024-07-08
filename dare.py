@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import DistanceMetric
 from streamlit_gsheets import GSheetsConnection
 from sklearn.metrics.pairwise import haversine_distances
+import cryptpandas as crp
 
 st.image('ban.png')
 url= "https://docs.google.com/spreadsheets/d/1tkP-WCCoGMcUZky80OKHpDcEkwuMcC8CRRyAthBUgRY/edit?usp=sharing"
@@ -103,6 +104,15 @@ def program_run():
     #palying with merge the dataframes
     mdf_others =pd.read_csv('others.csv', names= ('pple','longitude','latitude'))
     mdf = pd.read_csv('datatest.csv', names= ('pple','longitude','latitude'))
+
+    # Encrypted dataframes
+    my_salt = crp.make_salt(32)
+    crp.to_encrypted(mdf_others,password = 'mypassword123',path='mdf_other.crypt',salt = my_salt)
+    crp.to_encrypted(mdf,password = 'mypassword123',path='mdf.crypt',salt = my_salt)
+
+    # Decryption
+    mdf_others = crp.read_encrpyted(path='mdf_other.crypt',password = 'mypassword123',salt = my_salt)
+    mdf = crp.read_encrpyted(path='mdf.crypt',password = 'mypassword123',salt = my_salt)
 
     #concat
     appenddf = pd.concat([mdf_others,mdf],axis=0)
