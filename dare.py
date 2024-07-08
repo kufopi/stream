@@ -70,7 +70,7 @@ def program_run():
 
 
 
-    st.success(f'The chosen student with Matric {chosen} = {get_student_name(chosen,data)} is a person of interest (PoI) based on the Positive result of the RTI test conducted ',icon="🚨")
+    st.success(f'The chosen student with Matric {chosen} = {get_student_name(chosen,data)} is a person of interest (PoI) based on the flaged wearable device id {affected} ',icon="🚨")
     st.info(f'1.2 Remnant population database excluding {chosen}- {get_student_name(chosen,data)}',icon="🚨")
     st.dataframe(remanat_df)
 
@@ -114,9 +114,16 @@ def program_run():
     mdf_others = crp.read_encrypted(path='mdf_other.crypt',password = 'mypassword123',salt = my_salt)
     mdf = crp.read_encrypted(path='mdf.crypt',password = 'mypassword123',salt = my_salt)
 
+    st.subheader('1.2.1: Decrypting Data using CryptPanda using Salt for additonal layer of Security' )
+
+    st.code('''
+            mdf_others = crp.read_encrypted(path='mdf_other.crypt',password = 'mypassword123',salt = my_salt)
+            mdf = crp.read_encrypted(path='mdf.crypt',password = 'mypassword123',salt = my_salt)
+    ''')
+
     #concat
     appenddf = pd.concat([mdf_others,mdf],axis=0)
-    st.subheader("1.3 A Snippet of  Student's GPS Coordinates Data")
+    st.subheader("1.3 A Snippet of the Decrypted Student's GPS Coordinates Data")
     st.dataframe(appenddf.sample(20))
     st.write(f'Just to confirm the shape of dataframe is correct: {appenddf.shape}')
 
