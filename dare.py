@@ -37,7 +37,7 @@ st.subheader('1. Simulating Student Data within AU Campus ')
 st.warning(''' * Using longitude: 4.42085 and latitude: 7.69244 {representing GPS coordinates of Faculty of Science} as reference points ''')
 st.write(" :point_left: Adjust/Select Parameters")
 
-st.subheader('1.1 Simulated Student Population Database')
+st.subheader('1.1 Simulated University Student Database')
 st.caption('Click to see fullview/sort/download')
 data = conn.read(spreadsheet=url)
 
