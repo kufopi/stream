@@ -111,8 +111,8 @@ def program_run():
     crp.to_encrypted(mdf,password = 'mypassword123',path='mdf.crypt',salt = my_salt)
 
     # Decryption
-    mdf_others = crp.read_encrpyted(path='mdf_other.crypt',password = 'mypassword123',salt = my_salt)
-    mdf = crp.read_encrpyted(path='mdf.crypt',password = 'mypassword123',salt = my_salt)
+    mdf_others = crp.read_encrypted(path='mdf_other.crypt',password = 'mypassword123',salt = my_salt)
+    mdf = crp.read_encrypted(path='mdf.crypt',password = 'mypassword123',salt = my_salt)
 
     #concat
     appenddf = pd.concat([mdf_others,mdf],axis=0)
